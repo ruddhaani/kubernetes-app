@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vpro-memcached
-  labes:
+  labels:
     app: vpro-memcached
 spec:
   selector:
