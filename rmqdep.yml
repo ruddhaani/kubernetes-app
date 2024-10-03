@@ -4,27 +4,27 @@ metadata:
   name: vpro-rabbitmq
   labels:
     app: vpro-rabbitmq
-  spec:
-    selector:
-      matchLabels:
+spec:
+  selector:
+    matchLabels:
+      app: vpro-rabbitmq
+  replicas: 1
+  template:
+    metadata:
+      labels:
         app: vpro-rabbitmq
-    replicas: 1
-    template:
-      metadata:
-        labels:
-          app: vpro-rabbitmq
-      spec:
-        containers:
-          - name: vpro-rabbitmq
-            image: rabbitmq
-            ports:
-              - name: vpro-rabbitmq-port
-                containerPort: 15672
-            env:
-              - name: RABBITMQ_DEFAULT_PASS
-                valueFrom:
-                  secretKeyRef:
-                    name: app-secret
-                    key: rmq-pass
-              - name: RABBITMQ_DEFAULT_USER
-                value: "guest" 
+    spec:
+      containers:
+        - name: vpro-rabbitmq
+          image: rabbitmq
+          ports:
+            - name: vpro-rabbitmq-port
+              containerPort: 15672
+          env:
+            - name: RABBITMQ_DEFAULT_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: rmq-pass
+            - name: RABBITMQ_DEFAULT_USER
+              value: "guest" 
