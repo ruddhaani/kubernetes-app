@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
     - port: 15672
-      targetPort: vpro-rabbitmq-port
+      targetPort: 15672
       protocol: TCP
   selector:
     app: vpro-rabbitmq
