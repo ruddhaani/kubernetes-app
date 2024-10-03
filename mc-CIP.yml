@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
     - port: 11211
-      targetPort: vpro-memcached-port
+      targetPort: 11211
       protocol: TCP
   selector:
     app: vpro-memcached
